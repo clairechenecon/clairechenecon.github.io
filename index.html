@@ -1,13 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Claire Chen</title>
-    <link href="style.css" type="text/css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+  @font-face{
+      font-family:"helvetica";
+      src:url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("woff"),
+      url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("opentype"),
+      url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal
+  }
+  
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #e9e7ff;
+  background-color: #e9e7ff;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  font-family:"helvetica";
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #d1cbff;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #d1cbff;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
 </head>
 <body>
-    <h1>Claire Chen</h1>
-    <a href="research/changes_in_the_assimilation_of_asian_americans.pdf" target="_blank">Changes in the Assimilation of Asian Americans</a>
 
+<h1>Claire Chen</h>
+<h2>Hi!</h2>
+<p>I am a first-year PhD student at Vanderbilt University and an aspiring economic historian. My interests include migration, discrimination, and inequality.
+  <br>
+  <br>
+  You can contact me at <a href= "mailto: claire.l.chen@vanderbilt.edu" style="color:#8d7dff"> 
+    claire.l.chen@vanderbilt.edu</a>.
+</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Research')">Research</button>
+  <button class="tablinks" onclick="openCity(event, 'CV')">CV</button>
+</div>
+
+<div id="Research" class="tabcontent">
+  <h3>Works In Progress</h3>
+  <p><ul><li>"<a href="research/changes_in_the_assimilation_of_asian_americans.pdf" target="_blank" style="color:#8d7dff">Changes in the Assimilation of Asian Americans</a>"</li></ul></p>
+</div>
+
+<div id="CV" class="tabcontent">
+  <p>In Progress</p> 
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
 </body>
+</html> 
